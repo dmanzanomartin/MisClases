@@ -1,0 +1,162 @@
+$timing: .5s;
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+//Primary info
+
+#primary_info{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
+        background-color: #efefef;
+        width: 600px;
+        max-width: 90vw;
+        border-radius: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        input.input{
+            background-color: white;
+        }
+        .input_grp{
+            margin: 10px 0px;
+        }
+        &>div{
+            margin: 15px 0px;
+        }
+    }
+}
+
+//Chat
+
+#container{
+    height: 100vh;
+    #message_container{
+        height: calc(100vh - 100px);
+        /*height: 90%;
+        @media (max-height:650px){
+            height: 80%;
+        }*/
+        overflow-y: auto;
+        border: solid 1px black;
+        padding: 20px 10px;
+        display: flex;
+        flex-flow: column;
+        background-color: #efefef;
+        .positioned{
+            display: grid;
+            align-items: flex-start;
+            .message{
+                color: white;
+                max-width: 80%;
+                border-radius: 10px 10px 10px 0px;
+                background-color: #30AADD;
+                padding: 15px;
+                margin: 10px 0px;
+                justify-self: start;
+                &.client{
+                    border-radius: 10px 10px 0px 10px;
+                    justify-self: end;
+                }
+            }
+        }
+    }
+    
+    #send_container{
+        /*height: 10%;
+        @media (max-height:650px){
+            height: 20%;
+        }*/
+        height: 100px;
+        padding: 0px 20px;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        #input{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 36px;
+            input{
+                height: 36px;
+            }
+            #send_button{
+                height: 36px;
+                width: 36px;
+                margin: 0px 15px;
+                cursor: pointer;
+                transition: background-color $timing;
+                background-image: url("../assets/svgs/send.svg");
+                background-size: contain;
+            }
+        }
+        
+    }
+}
+
+
+//COMMON
+
+
+//Form elements
+input.input, select.select, datalist.datalist{
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #efefef;
+    border-radius: 5px;
+    color: black;
+    &.transparent{
+        background-color: transparent;
+        border: solid 3px #efefef;
+    }
+}
+
+.expanded{
+    width: 100%;
+}
+
+button.btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        cursor: pointer;
+    }
+    &.btn-primary{
+        color: white;
+        background-color: #548CFF;
+    }
+    &.btn-danger{
+        color: white;
+        background-color: #DA1212;
+    }
+    &.btn-step{
+        color: white;
+        background-color: black;
+    }
+    &.btn-accept{
+        color: white;
+        background-color: #8BDB81;
+    }
+}
+
+.hidded{
+    display: none !important;
+}
